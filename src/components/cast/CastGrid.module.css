@@ -1,0 +1,18 @@
+.castGrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.actorImage {
+  border-radius: 4px;
+  width: 75px;
+  height: 112.5px;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+  .castGrid {
+    grid-template-columns: auto;
+  }
+}

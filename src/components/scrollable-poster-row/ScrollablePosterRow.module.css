@@ -1,0 +1,12 @@
+.scrollableRow {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 175px;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 10px 0;
+}
+
+.posterCardWrapper {
+    width: 175px;
+}
