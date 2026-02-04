@@ -2,6 +2,7 @@ import { PaginatedResponse } from "@/types/ApiResponse.type";
 import { MovieResult } from "@/types/Movie.type";
 import { Suspense } from "react";
 import MoviesGridPaginatedContent from "./MoviesGridPaginatedContent";
+import PageGridSkeleton from "@/components/page-grid/PageGridSkeleton";
 
 interface Props {
   filters: Record<string, string>;
@@ -12,7 +13,7 @@ interface Props {
 
 const MoviesGridPaginated = ({ filters, service }: Props) => {
   return (
-    <Suspense>
+    <Suspense key={JSON.stringify(filters)} fallback={<PageGridSkeleton />}>
       <MoviesGridPaginatedContent filters={filters} service={service} />
     </Suspense>
   );
