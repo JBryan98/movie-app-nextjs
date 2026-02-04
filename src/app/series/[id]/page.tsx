@@ -61,9 +61,6 @@ const SerieDetailsPage = async ({ params }: Props) => {
           </section>
         </Stack>
       </AppContainer>
-      <pre>
-        <code>{JSON.stringify(serieDetails, null, 2)}</code>
-      </pre>
     </Box>
   );
 };

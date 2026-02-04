@@ -62,9 +62,6 @@ const MovieDetailsPage = async ({ params }: Props) => {
           </section>
         </Stack>
       </AppContainer>
-      <pre>
-        <code>{JSON.stringify(movieDetails, null, 2)}</code>
-      </pre>
     </Stack>
   );
 };
