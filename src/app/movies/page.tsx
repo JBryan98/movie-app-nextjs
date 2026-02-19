@@ -22,7 +22,7 @@ const MoviesPage = async ({ searchParams }: Props) => {
       <Typography variant="h4" gutterBottom>
         Explorar películas:
       </Typography>
-      <Grid container mb={2}>
+      <Grid container mb={2} spacing={2}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Suspense fallback={<div>Cargando filtros...</div>}>
             <MovieFilterSection />
