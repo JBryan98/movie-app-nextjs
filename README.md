@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie app
 
-## Getting Started
+This project is a web application to explore movies and series, using the API of TMDB. The homepage still in development so you will get redirected to `/movies` if you try to access it.
 
-First, run the development server:
+# Technologies used
 
+The project uses the following technologies:
+
+* Typescript
+* React 19
+* Nextjs 15
+* Material UI
+* Dayjs
+
+### How to run the application
+
+To run the application, you need to have at least Node.js version `20.9` installed on your machine.
+1. Clone the repository
+
+````bash
+ git clone https://github.com/JBryan98/movie-app-nextjs
+````
+
+2. Install the project dependencies using npm
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Create an `.env` file on the root of the project with the following values. You can get your own TMDB API KEY at
+[https://developer.themoviedb.org/docs/getting-started](https://developer.themoviedb.org/docs/getting-started).
+````env
+TMDB_BASE_URL=https://api.themoviedb.org/3
+TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+TMDB_MEDIA_BASE_URL=https://media.themoviedb.org/t/p
+TMDB_API_KEY=YOUR_API_KEY
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
+NEXT_PUBLIC_TMDB_MEDIA_BASE_URL=https://media.themoviedb.org/t/p
+NEXT_PUBLIC_TMDB_API_KEY=YOUR_API_KEY
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+````
 
-## Learn More
+3. Run the application using npm
 
-To learn more about Next.js, take a look at the following resources:
+````bash
+npm run dev
+````
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## App preview
+Desktop preview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<img src="https://i.imgur.com/gqS3VBP.png" alt="desktop_preview">
 
-## Deploy on Vercel
+Mobile preview
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<img src="https://i.imgur.com/YGgRlm9.png" alt="mobile-preview">
