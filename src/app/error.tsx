@@ -1,11 +1,10 @@
 "use client";
 
 import ErrorContainer from "@/components/layout/ErrorContainer";
-import { Alert, AlertTitle, Button, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function ErrorPage({
   error,
@@ -14,15 +13,15 @@ export default function ErrorPage({
   error: Error & { digest?: string };
   unstable_retry: () => void;
 }) {
-  const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
-    console.error(error);
+    setErrorMessage(error.message);
   }, [error]);
 
   return (
     <ErrorContainer>
       <Typography variant="h5" textAlign="center" gutterBottom>
-        {error.message}
+        {errorMessage}
       </Typography>
       <div>
         <Image
