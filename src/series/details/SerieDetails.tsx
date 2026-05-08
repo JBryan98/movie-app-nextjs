@@ -1,3 +1,4 @@
+import GenreChips from '@/components/genders/GenreChips'
 import { SerieDetails as SerieDetailsType } from '@/types/Serie.type'
 import { formatScoreWithMax } from '@/utils/utils'
 import { Box, Link as MuiLink, Typography } from '@mui/material'
@@ -10,7 +11,7 @@ const SerieDetails = ({ serie }: Props) => {
   return (
         <Box>
         <Typography variant="h4" gutterBottom fontWeight="bold">{serie.name}</Typography>
-        <Typography variant='h6' gutterBottom fontWeight="bold">{serie.production_companies.map(c => c.name).join(", ")}</Typography>
+        <GenreChips type="tv" genres={serie.genres} />
         <Typography variant='body1' gutterBottom>{serie.overview}</Typography>
         <div>            
             <Typography variant='body1' fontWeight="bold" component="span">Fecha de emisión: </Typography>
@@ -33,8 +34,8 @@ const SerieDetails = ({ serie }: Props) => {
             <Typography variant='body1' component="span">{formatScoreWithMax(serie.vote_average)}</Typography>
         </div>
         <div>
-            <Typography variant='body1' fontWeight="bold" component="span"> Categorías: </Typography>
-            <Typography variant='body1' component="span">{serie.genres.map(g => g.name).join(", ")}</Typography>
+            <Typography variant='body1' fontWeight="bold" component="span">Productoras: </Typography>
+            <Typography variant='body1' component="span">{serie.production_companies.map(c => c.name).join(", ")}</Typography>
         </div>
         <div>
             <Typography variant='body1' fontWeight="bold" component="span"> Dirección: </Typography>

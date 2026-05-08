@@ -1,3 +1,4 @@
+import GenreChips from '@/components/genders/GenreChips';
 import { Movie } from '@/types/Movie.type';
 import { formatScoreWithMax } from '@/utils/utils';
 import { Box, Link as MuiLink, Typography } from '@mui/material';
@@ -9,8 +10,8 @@ interface Props {
 const MovieDetails = ({ movie }: Props) => {
   return (
     <Box>
-        <Typography variant="h4" fontWeight="bold">{movie.title}</Typography>
-        <Typography variant='h6' gutterBottom fontWeight="bold">{movie.production_companies.map(c => c.name).join(", ")}</Typography>
+        <Typography variant="h4" gutterBottom fontWeight="bold">{movie.title}</Typography>
+        <GenreChips type='movie' genres={movie.genres}/>
         <Typography variant='body1' gutterBottom>{movie.overview}</Typography>
         <div>            
             <Typography variant='body1' fontWeight="bold" component="span">Fecha de lanzamiento: </Typography>
@@ -29,8 +30,8 @@ const MovieDetails = ({ movie }: Props) => {
             <Typography variant='body1' component="span">{formatScoreWithMax(movie.vote_average)}</Typography>
         </div>
         <div>
-            <Typography variant='body1' fontWeight="bold" component="span"> Categorías: </Typography>
-            <Typography variant='body1' component="span">{movie.genres.map(g => g.name).join(", ")}</Typography>
+            <Typography variant='body1' fontWeight="bold" component="span"> Productoras: </Typography>
+            <Typography variant='body1' component="span">{movie.production_companies.map(c => c.name).join(", ")}</Typography>
         </div>
         <div>
             <Typography variant='body1' fontWeight="bold" component="span"> Presupuesto: </Typography>
