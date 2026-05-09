@@ -1,6 +1,6 @@
 import GenreChips from '@/components/genders/GenreChips';
 import { Movie } from '@/types/Movie.type';
-import { formatScoreWithMax } from '@/utils/utils';
+import { formatRatingWithMax } from '@/utils/utils';
 import { Box, Link as MuiLink, Typography } from '@mui/material';
 
 interface Props {
@@ -27,7 +27,7 @@ const MovieDetails = ({ movie }: Props) => {
         </div>
         <div>
             <Typography variant='body1' fontWeight="bold" component="span"> Calificación: </Typography>
-            <Typography variant='body1' component="span">{formatScoreWithMax(movie.vote_average)}</Typography>
+            <Typography variant='body1' component="span">{formatRatingWithMax(movie.vote_average)}</Typography>
         </div>
         <div>
             <Typography variant='body1' fontWeight="bold" component="span"> Productoras: </Typography>

@@ -1,4 +1,4 @@
-import { getPosterImageUrl } from "@/utils/utils";
+import { formatRating, getPosterImageUrl } from "@/utils/utils";
 import { Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +24,7 @@ const PageGridCard = ({ item }: Props) => {
         <div className={styles.ratingContainer}>
           <RatingIcon size={18} />
           <Typography variant="body2" className={styles.ratingText}>
-            {item.rating.toFixed(1)}
+            {formatRating(item.rating)}
           </Typography>
         </div>
       </Link>

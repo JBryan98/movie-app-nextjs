@@ -1,6 +1,6 @@
 import GenreChips from '@/components/genders/GenreChips'
 import { SerieDetails as SerieDetailsType } from '@/types/Serie.type'
-import { formatScoreWithMax } from '@/utils/utils'
+import { formatRatingWithMax } from '@/utils/utils'
 import { Box, Link as MuiLink, Typography } from '@mui/material'
 
 interface Props {
@@ -31,7 +31,7 @@ const SerieDetails = ({ serie }: Props) => {
         </div>
         <div>
             <Typography variant='body1' fontWeight="bold" component="span"> Calificación: </Typography>
-            <Typography variant='body1' component="span">{formatScoreWithMax(serie.vote_average)}</Typography>
+            <Typography variant='body1' component="span">{formatRatingWithMax(serie.vote_average)}</Typography>
         </div>
         <div>
             <Typography variant='body1' fontWeight="bold" component="span">Productoras: </Typography>

@@ -55,14 +55,11 @@ export const createUrl = (
   return `${pathname}${queryString}`;
 };
 
-export const formatScore = (voteAverage: number): string => {
-  if (voteAverage === 0) {
-    return "NR";
-  }
+export const formatRating = (voteAverage: number): string => {
   return voteAverage.toFixed(1);
 };
 
-export const formatScoreWithMax = (voteAverage: number): string => {
+export const formatRatingWithMax = (voteAverage: number): string => {
   if (voteAverage === 0) {
     return "Sin puntuación";
   }
