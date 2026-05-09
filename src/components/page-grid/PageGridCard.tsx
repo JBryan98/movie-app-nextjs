@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./PageGrid.module.css";
 import { PageGridItem } from "./PageGridItem.type";
+import RatingIcon from "../rating/RatingIcon";
 
 interface Props {
   item: PageGridItem;
@@ -20,6 +21,12 @@ const PageGridCard = ({ item }: Props) => {
           height={500}
           className={styles.cardImg}
         />
+        <div className={styles.ratingContainer}>
+          <RatingIcon size={18} />
+          <Typography variant="body2" className={styles.ratingText}>
+            {item.rating.toFixed(1)}
+          </Typography>
+        </div>
       </Link>
       <Link href={item.href}>
         <Typography variant="body1" className={styles.cardTitle}>

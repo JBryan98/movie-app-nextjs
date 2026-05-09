@@ -4,4 +4,5 @@ export type PageGridItem = {
   posterPath: string | null;
   overview: string;
   href: string;
+  rating: number;
 };

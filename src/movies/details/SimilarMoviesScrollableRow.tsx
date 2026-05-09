@@ -22,6 +22,7 @@ const SimilarMoviesScrollableRow = ({ movies }: Props) => {
     posterPath: movie.poster_path,
     href: `/movies/${movie.id}`,
     overview: movie.overview,
+    rating: movie.vote_average,
   }));
   return <ScrollablePosterRow items={items} />;
 };

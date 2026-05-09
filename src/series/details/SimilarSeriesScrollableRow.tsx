@@ -18,6 +18,7 @@ const SimilarSeriesScrollableRow = ({ series }: Props) => {
     posterPath: serie.poster_path,
     overview: serie.overview,
     href: `/series/${serie.id}`,
+    rating: serie.vote_average,
   }));
 
   return <ScrollablePosterRow items={items} />;

@@ -19,6 +19,7 @@ const SeriesGridPaginatedContent = async ({ searchParams, service }: Props) => {
     posterPath: serie.poster_path,
     overview: serie.overview,
     href: `/series/${serie.id}`,
+    rating: serie.vote_average,
   }));
 
   return (

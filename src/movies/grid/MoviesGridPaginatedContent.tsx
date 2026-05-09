@@ -20,6 +20,7 @@ const MoviesGridPaginatedContent = async ({ service, filters }: Props) => {
       posterPath: movie.poster_path,
       overview: movie.overview,
       href: `/movies/${movie.id}`,
+      rating: movie.vote_average,
     }),
   );
 
