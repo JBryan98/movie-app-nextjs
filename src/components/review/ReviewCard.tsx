@@ -1,11 +1,16 @@
 "use client";
 
-import { literalDateTime } from "@/lib/other/dayjs";
 import { Review } from "@/types/Movie.type";
 import { truncateText } from "@/utils/utils";
-import { Card, CardContent, CardHeader, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
 import CardAvatar from "./CardAvatar";
+import ReviewCardSubheader from "./ReviewCardSubheader";
 
 interface Props {
   review: Review;
@@ -13,7 +18,7 @@ interface Props {
 
 const ReviewCard = ({ review }: Props) => {
   const [showFullReview, setShowFullReview] = useState<boolean>(false);
-  const maxContentLength = 190;
+  const maxContentLength = 220;
   const isTruncated = review.content.length > maxContentLength;
   return (
     <Card>
@@ -25,12 +30,13 @@ const ReviewCard = ({ review }: Props) => {
           />
         }
         title={review.author}
-        subheader={literalDateTime(review.created_at)}
+        subheader={<ReviewCardSubheader rating={review.author_details.rating} publishedAt={review.created_at} />}
+        sx={{ paddingBottom: 0 }}
       />
       <CardContent>
         <Typography
-          variant="body1"
-          color="textSecondary"
+          variant="body2"
+          color="text.secondary"
           component="p"
           textAlign="justify"
         >
@@ -40,8 +46,8 @@ const ReviewCard = ({ review }: Props) => {
         </Typography>
         <Typography
           color="primary"
-          variant="body1"
-          sx={{ display: isTruncated ? "block" : "none" }}
+          variant="body2"
+          sx={{ width: "fit-content", display: isTruncated ? "block" : "none" }}
           onClick={() => setShowFullReview(!showFullReview)}
           style={{ cursor: "pointer", textDecoration: "underline" }}
         >
