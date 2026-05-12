@@ -18,7 +18,7 @@ const PageGridCard = ({ item }: Props) => {
           src={getPosterImageUrl(item.posterPath, 300)}
           alt={item.title}
           width={300}
-          height={500}
+          height={450}
           className={styles.cardImg}
         />
         <div className={styles.ratingContainer}>
@@ -29,7 +29,7 @@ const PageGridCard = ({ item }: Props) => {
         </div>
       </Link>
       <Link href={item.href}>
-        <Typography variant="body1" className={styles.cardTitle}>
+        <Typography variant="body2" className={styles.cardTitle}>
           {item.title}
         </Typography>
       </Link>
