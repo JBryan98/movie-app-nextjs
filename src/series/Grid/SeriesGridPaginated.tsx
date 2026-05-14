@@ -14,7 +14,7 @@ interface Props {
 const SeriesGridPaginated = ({ filters, service }: Props) => {
   return (
     <Suspense key={JSON.stringify(filters)} fallback={<PageGridSkeleton />}>
-      <SeriesGridPaginatedContent searchParams={filters} service={service} />
+      <SeriesGridPaginatedContent filters={filters} service={service} />
     </Suspense>
   );
 };

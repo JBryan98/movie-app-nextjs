@@ -2,6 +2,7 @@ import { PageGridItem } from "@/components/page-grid/PageGridItem.type";
 import PageGridPaginated from "@/components/page-grid/PageGridPaginated";
 import { PaginatedResponse } from "@/types/ApiResponse.type";
 import { MovieResult } from "@/types/Movie.type";
+import { Alert } from "@mui/material";
 
 interface Props {
   filters: Record<string, string>;
@@ -11,7 +12,22 @@ interface Props {
 }
 
 const MoviesGridPaginatedContent = async ({ service, filters }: Props) => {
+  if (
+    filters.page &&
+    (isNaN(+filters.page) || +filters.page < 1 || +filters.page > 500)
+  ) {
+    return (
+      <Alert severity="error">
+        La página especificada no es válida. Solo estan permitidos valores entre
+        1 y 500 para el parámetro page.
+      </Alert>
+    );
+  }
   const discoverMoviesData = await service(filters);
+
+  if (discoverMoviesData.results.length === 0) {
+    return <Alert severity="info">No se encontraron películas.</Alert>;
+  }
 
   const pageGridItems: PageGridItem[] = discoverMoviesData.results.map(
     (movie) => ({
