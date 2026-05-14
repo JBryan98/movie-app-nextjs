@@ -39,11 +39,6 @@ const getFetchUrl = (pathname: string): URL => {
 
 const handleFilters = (url: URL, filter?: Record<string, any>) => {
   if (!filter) return;
-  if (filter.page && filter.page > CONFIG.MAX_PAGE) {
-    throw new Error(
-      "La página solicitada excede el límite permitido por la API",
-    );
-  }
   Object.entries(filter).forEach(([key, value]) => {
     if (value !== undefined && value !== null) {
       url.searchParams.set(key, String(value));
