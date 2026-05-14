@@ -12,20 +12,21 @@ interface Props {
 export const generateMetadata = async ({ params }: Props) => {
   const { q } = await params;
   return {
-    title: `Buscar '${q}'`,
+    title: `Buscar '${decodeURIComponent(q)}'`,
   };
 };
 
 const MoviesSearchPage = async ({ params, searchParams }: Props) => {
   const { q } = await params;
   const filters = await searchParams;
-  filters.query = q;
+  const query = decodeURIComponent(q);
+  filters.query = query;
   return (
     <AppContainer sx={{ paddingTop: 2 }}>
       <Grid container mb={2} spacing={2}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="h4" gutterBottom>
-            Resultados de búsqueda para: "{q}"
+            Resultados de búsqueda para: "{query}"
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
