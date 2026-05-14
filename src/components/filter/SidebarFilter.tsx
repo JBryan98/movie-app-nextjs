@@ -17,7 +17,7 @@ const SidebarFilter = ({ title, children }: Props) => {
       <Button
         variant="contained"
         onClick={() => setOpen(true)}
-        startIcon={<FilterAltIcon />}
+        startIcon={<FilterAltIcon  sx={{ marginBottom: "2px"}}/>}
         sx={{
           height: "100%",
           width: {
